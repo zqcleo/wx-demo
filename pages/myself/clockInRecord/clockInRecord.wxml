@@ -1,0 +1,28 @@
+<!--pages/clockInRecord/clockInRecord.wxml-->
+<view class='background_img_1'>
+  <navigator url="../../myself/myself" class="nav_to_user" open-type='switchTab' hover-class="none" style="top:{{statusBarHeight+19}}px">
+    <view class='blank_text'></view>
+  </navigator>
+  
+  <view class='clockIn_record'>
+    <view class='clockIn_record_pageframe'>
+      <view class="clockIn_record_page_list">今日打卡时间</view>
+      <view class="clockIn_record_page_text">{{clock_in_time}}</view>
+    </view>
+    
+    <view class="clockIn_record_pageframe">
+      <view class="clockIn_record_page_list">总计打卡天数</view>
+      <view class="clockIn_record_page_text">{{total_early_days}}天</view>
+    </view>
+
+    <view class="clockIn_record_pageframe">
+      <view class="clockIn_record_page_list">当前连续打卡</view>
+      <view class="clockIn_record_page_text">{{current_consecutive_days}}天</view>
+    </view>
+    
+    <view class="clockIn_record_pageframe">
+      <view class="clockIn_record_page_list">最大连续打卡</view>
+      <view class="clockIn_record_page_text">{{max_consecutive_days}}天</view>
+    </view>
+  </view>
+</view>

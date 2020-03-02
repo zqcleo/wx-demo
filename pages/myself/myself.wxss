@@ -1,0 +1,262 @@
+page {
+  height: 100%;
+  font-size: 16px;
+  font-family: -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
+}
+
+.background_img_1{
+  width: 100%;
+  height: 100%;
+}
+
+.userInfo_container {
+  height: 400rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0rpx 0;
+  box-sizing: border-box;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 140rpx;
+  height: 140rpx;
+  margin: 10rpx;
+  border-radius: 50%;
+  position: relative;
+  left: -250rpx;
+  top: 150rpx;
+}
+
+.userinfo-nickname {
+  color: white;
+  font-weight: 500;
+  font-size: large;
+  position: absolute;
+  left: 238rpx;
+  top: 170rpx;
+  /*position:relative;
+  left:-78rpx;
+  top:-155rpx;*/
+}
+
+.moreUserinfo {
+  color: white;
+  font-size: small;
+  /*position: relative;
+  left: -62rpx;
+  top: -120rpx;*/
+  position:absolute;
+  left:238rpx;
+  top:247rpx;
+}
+
+.avatar-navi {
+  padding-right: 13px;
+  position: relative;
+  left: 306rpx;
+  top: -135rpx;
+}
+
+.avatar-navi:after {
+  content: " ";
+  display: inline-block;
+  height: 6px;
+  width: 6px;
+  border-width: 2px 2px 0 0;
+  border-color: #c8c8cd;
+  border-style: solid;
+  -webkit-transform: matrix(0.71, 0.71, -.71, 0.71, 0, 0);
+  transform: matrix(0.71, 0.71, -.71, 0.71, 0, 0);
+  top: -2px;
+  position: absolute;
+  top: 50%;
+  margin-top: -4px;
+  right: 2px;
+}
+
+.blank_text_user{
+  border-radius: 40rpx; 
+  border: 2rpx solid #5CACEE;
+  border-style:none;
+  position:absolute;
+  top: 210rpx;
+  left: 632rpx;
+  height: 100rpx;
+  width: 100rpx;
+}
+
+.setting{
+  background-color: white;
+  border-radius: 40rpx; 
+  border: 2rpx solid #5CACEE;
+  position: absolute;
+  top: 350rpx;
+  left: 25rpx;
+  /*height: 800rpx;*/
+  height: 65%;
+  width: 700rpx;
+}
+
+.user_blank{
+  border: 10rpx solid #f1f0f0;
+  position: relative;
+  top: 15rpx;
+}
+
+.user_line{
+  content: " ";
+  position: relative;
+  top: 16rpx;
+  height: 1px;
+  border-top: 1rpx solid #d9d9d9;
+  left: 95rpx;
+  width: 607rpx;
+}
+
+.vocation {
+  margin-right: 30rpx;
+  width: 50rpx;
+  height: 50rpx;
+  position: relative;
+  left: 10rpx;
+  top: 2rpx;
+}
+
+.card {
+  margin-right: 30rpx;
+  vertical-align: middle;
+  width: 50rpx;
+  height: 50rpx;
+  position: relative;
+  left: 10rpx;
+  top: 0rpx;
+}
+
+.record {
+  margin-right: 30rpx;
+  vertical-align: middle;
+  width: 50rpx;
+  height: 50rpx;
+  position: relative;
+  left: 10rpx;
+  top: 2rpx;
+}
+
+.goal {
+  margin-right: 30rpx;
+  vertical-align: middle;
+  width: 50rpx;
+  height: 50rpx;
+  position: relative;
+  left: 10rpx;
+  top: 3rpx;
+}
+
+.bug{
+  margin-right: 30rpx;
+  vertical-align: middle;
+  width: 50rpx;
+  height: 50rpx;
+  position: relative;
+  left: 10rpx;
+  top: 0rpx;
+}
+
+.rm_storage{
+  margin-right: 30rpx;
+  vertical-align: middle;
+  width: 50rpx;
+  height: 50rpx;
+  position: relative;
+  left: 10rpx;
+  top: 0rpx;
+}
+
+.storage_size{
+  text-align: right;
+  color: #999;
+  position: relative;
+  right: 15rpx;
+  top: 5rpx;
+}
+
+.about {
+  margin-right: 30rpx;
+  vertical-align: middle;
+  width: 50rpx;
+  height: 50rpx;
+  position: relative;
+  left: 10rpx;
+  top: 0rpx;
+}
+
+.user_page_list {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  position: relative;
+  top: 0rpx;
+}
+
+.select_day_text {
+  text-align: right;
+  color: #999;
+  position: relative;
+  top: 4rpx;
+  left: -25rpx;
+}
+
+.select_time_text {
+  text-align: right;
+  color: #999;
+  position: relative;
+  top: 4rpx;
+  left: -25rpx;
+}
+
+.arrow {
+  padding-right: 13px;
+  position: relative;
+  left: -25rpx;
+  top: 4rpx;
+}
+
+.arrow:after {
+  content: " ";
+  display: inline-block;
+  height: 6px;
+  width: 6px;
+  border-width: 2px 2px 0 0;
+  border-color: #c8c8cd;
+  border-style: solid;
+  -webkit-transform: matrix(0.71, 0.71, -.71, 0.71, 0, 0);
+  transform: matrix(0.71, 0.71, -.71, 0.71, 0, 0);
+  top: -2px;
+  position: absolute;
+  top: 50%;
+  margin-top: -4px;
+  right: 2px;
+}
+
+.user_page_frame {
+  position: relative;
+  top: 16rpx;
+  left: 15rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  height: 98rpx;
+  width: 680rpx;
+  line-height: 98rpx;
+}

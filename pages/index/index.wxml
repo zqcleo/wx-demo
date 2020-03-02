@@ -1,0 +1,101 @@
+<!--index.wxml-->
+<!--todolist 时间插件-->
+<wxs src="../../api/api.wxs" module="api" />
+<view id='meteors-canvas'>
+</view>
+<view class="container background_img_1">
+  <!-->----------------------------------------clock_box用于打卡前页面--------------------------------------------------<-->
+  <view wx:if="{{!has_clocked_today || isclocking}}"  class="clock_box">
+      <!-->这个地方可以优化<-->
+      <view wx:if="{{!isclocking}}" class='time_ball timeball_img'>
+        <text class='font-haettenschweiler' 
+         style='font-size: 30px; letter-spacing:3px; text-align:center;'>{{curr_tranditonal_date}}\n{{curr_time}}</text>
+      </view>
+      <view wx:if="{{!isclocking}}" class='record_prompt'>坚持打卡第<text class='record_prompt_days'>{{consecutive_days}}</text>天</view>
+      
+      <view wx:if="{{!isclocking}}"  class='clock_button_box'>
+        <view class='button_halo_1'></view>
+        <view class='button_halo_2'></view>
+        <button class="clock_button clockIn_button" bindtap="onStartClockInButtonClicked">打卡</button>
+      </view>
+
+      <view wx:if="{{!isclocking}}" class='clockin_countdown countdown'><view class='clock_img'></view>
+        <text class='countdown_text font-haettenschweiler' 
+              style='font-size: 30px; letter-spacing:3px;'>{{left_clockin_time}}</text>
+      </view>
+
+      <view wx:if="{{isclocking}}" class='time_ball timeball_img'>
+        <view class='walk_man_icon emerge_anime'></view>
+        <text class='stepinfo_count emerge_anime' style='font-size: 50rpx;'>{{step_count}}</text>
+        <text class='emerge_anime'>步</text>
+      </view>
+      <view wx:if="{{isclocking}}"  class="step_countdown countdown" bindtap=""><view class='clock_img'></view>
+        <text class='countdown_text font-haettenschweiler' style='font-size: 30px; letter-spacing:3px;'>{{leftminutes_to_walk}}</text>
+      </view>
+      
+      <view wx:if="{{isclocking}}"  class='clock_button_box clock_button_box_animation '>
+        <view class='button_halo_1 button_halo_1_animation'></view>
+        <view class='button_halo_2 button_halo_2_animation'></view>
+        <button class="clock_button endclock_button_animation" bindtap="clickEndCLockinButton">结束</button>
+      </view>
+  </view>
+
+  <!-->----------------------------------todo_box用于打卡后页面 显示todolist--------------------------------------------<-->
+  <view wx:elif="{{has_clocked_today && !isclocking}}" class='todo_box'
+        bindtouchstart="controlCalendarStart" bindtouchend="controlCalendarEnd">
+    <view class='shadow_mask' style='display: {{onAdding? "block":"none"}}' bindtap='hideForm'></view>
+    <view class="addForm {{onAdding ? 'showForm-animation':'hideForm-animation'}}" hidden='{{!onAdding}}'>
+      <text style='position: relative; top: 30rpx; left: 30rpx;'>创建事件</text>
+      <input class="weui-input todocontent_input" placeholder="请输入事件"  value="{{curr_todo_text_input}}" bindinput="setInput" focus="{{focus}}" maxlength='10' />
+      <view class='pulldown_type_box'>
+          <view class='selected_type' bindtap='openTodoTypeOptions'>
+            {{todo_type[selected_index]}}
+            <view class='downward_triangle_img'></view>
+          </view>
+          <view class='typeoption_box {{onshow_todotype? "show_typeoption_animation":""}}'>
+            <text class='options' wx:for='{{todo_type}}' wx:key='this' data-index='{{index}}'
+                  bindtap='tapTodoTypeOption'>{{item}}</text>
+          </view>
+      </view>
+      <picker class='time_picker' mode='time' bindchange="bindScheduleTimeChange">完成时间：{{curr_schedule_time}}</picker>
+      <view class="addForm-control">
+        <view class="cancel_control_button" bindtap="hideForm">取消</view>
+        <view class="addtodo_control_button" bindtap="addTodo">添加</view>
+      </view>
+    </view>
+
+    <view class='todolist_topbar'>
+      <view class='moon_box'>
+        <view class='moon'></view>
+        <view class='cloude_1'></view>
+        <view class='cloude_2'></view>
+        <view class='cloude_3'></view>
+      </view>
+
+      <view class='notation notation_background'><text style='color: #FFC50A'></text></view>
+      <view class='calender_icon' bindtap='controlCalendar'></view>
+      <view class='statistics_icon' bindtap='showStatistics'></view>
+    </view>
+
+    <!--自定义组件calendar  hidden没用-->
+    <calendar class='calendar' calendar="{{calendar}}" gesture="{{gesture}}"></calendar>
+    
+    <view class='todoList_content_box'>
+      <view class='todoList_date'>{{curr_month}}月{{curr_day}}日 {{curr_week}}</view>
+
+      <scroll-view class="scol_todoLists_content_box" scroll-y>
+        <view class='todo_content_box' wx:for="{{todolist_content_arr}}" wx:key="index">
+          <view class="todo_content" style="{{item.txtStyle}}" data-index="{{index}}" 
+                bindtouchstart="todoBoxTouchStart" bindtouchmove="todoBoxTouchMove" bindtouchend="todoBoxTouchEnd">
+            <icon class="icon-small content_icon" type="{{!item.is_finished? 'circle':'success'}}" size="23" data-item="{{item.time_stamp}}" bindtap="changeTodoState"></icon>
+            <view class="content_title {{item.is_finished? 'over':''}} ">{{item.content}}</view>
+            <view class="content_time">{{item.schedule_time}}</view>
+          </view>
+          <view class="del_button" data-item="{{item.time_stamp}}" bindtap="delTodo">删除</view>
+        </view>
+      </scroll-view>
+      <view id='addTodoButton' class='addtodo-button-img' bindtap="showAddForm" hidden='{{onAdding}}'></view>
+    </view>
+
+  </view>
+</view>

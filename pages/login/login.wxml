@@ -1,0 +1,6 @@
+<!--pages/login/login.wxml-->
+<view class='background_img_1'>
+  <button class='login_button' wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">  
+    进入
+  </button>
+</view>

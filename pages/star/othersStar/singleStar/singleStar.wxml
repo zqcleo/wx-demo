@@ -1,0 +1,21 @@
+<!--pages/star/othersStar/singleStar/singleStar.wxml-->
+<view class='background_img_star'>
+  <view class='navigation_arrow_left' bindtap='backToOnePage'></view>
+  <view class='info_box'>
+    <view>{{info.year}}年{{info.month}}月{{info.day}}日</view>  
+    <view>{{info.begin_clockin_time}}—{{info.end_clockin_time}}</view> 
+    <view>总计耗时：{{info.time_coast}}</view> 
+    <view>总计步数：{{info.step_count}}</view> 
+    <view wx:for="{{info.todolist_content_arr}}" wx:if="{{item.is_finished}}" wx:key="{{index}}">{{item.content}}</view> 
+  </view>
+
+  <movable-area class='movable_area'>
+    <movable-view class='star_movable_container' animation='{{false}}'
+                  data-order='{{item.order}}' 
+                  x='{{x}}' y='{{y}}'  direction='all' scale='true' scale-min='0.1' scale-max='2'>
+      <!--movable-view 原理是将x，y转换为translateX/Y/Z 需要使用view嵌套使用rotate 同时用scale避免放缩问题-->
+      <view class='star' style='transform:rotate({{rotation_angle}}deg) scale({{size}});'></view>
+    </movable-view>
+  </movable-area>
+</view>
+

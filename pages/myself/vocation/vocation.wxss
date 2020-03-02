@@ -1,0 +1,95 @@
+/* pages/vocation/vocation.wxss */
+
+/* pages/userInfo/userInfo.wxss */
+
+page {
+  height: 100%;
+  font-size: 16px;
+  font-family: -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
+}
+
+.background_img_1 {
+  width: 100%;
+  height: 100%;
+}
+
+.text_word{
+  position: absolute;
+  top: 12%;
+  left: 60rpx;
+  color: white;
+  font-size: large;
+  font-weight: 800;
+}
+
+.help{
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  position: absolute;
+  left: 650rpx;
+  top: 12%;
+}
+
+.select_days{
+  background-color: white;
+  border-radius: 40rpx; 
+  border: 2rpx solid #5CACEE;
+  position: absolute;
+  top: 18%;
+  left: 25rpx;
+  /*height: 56%;*/
+  height: 800rpx;
+  width: 700rpx;
+}
+
+.vocation_pageframe_container{
+  position: relative;
+  top: 5%;
+}
+
+.vocation_pageframe {
+  position: relative;
+  padding: 3% 5%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  line-height: 12%;
+  height: 60rpx;
+}
+
+.vocation-check {
+  position: absolute;
+  left: -9999px;
+}
+
+.vocation_page_text {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+}
+
+.icon-check_circle, .icon-check_success {
+  margin-left: 4.6rpx;
+  margin-right: 20rpx;
+}
+
+.save_vocation{
+  position: absolute;
+  top: 1120rpx;
+  left: 220rpx;
+  height: 100rpx;
+  width: 300rpx;
+  background-color: white;
+  color: #5CACEE;
+  border-radius: 98rpx; 
+  border: 2rpx solid #5CACEE;
+  box-shadow: 4px 4px 8px  rgba(0, 0, 0, 0.5);
+}
+
+.button-hover {
+  background-color: #D4D4D4;
+}

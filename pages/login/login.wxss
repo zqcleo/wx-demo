@@ -1,0 +1,15 @@
+/* pages/login/login.wxss */
+
+.login_button{
+  position: fixed;
+  top: 64%;
+  left: 40%;
+  height: 160rpx;
+  width: 160rpx; 
+  border-radius: 100%;/*这个地方 圆形效果 要改！*/
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #FFC50A;
+}

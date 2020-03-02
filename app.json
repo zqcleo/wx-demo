@@ -1,0 +1,56 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/login/login",
+    "pages/logs/logs",
+    "pages/star/star",
+    "pages/star/styleStar/styleStar",
+    "pages/star/othersStar/othersStar",
+    "pages/star/othersStar/singleStar/singleStar",
+
+    "pages/rankingList/rankingList",
+    "pages/myself/myself",
+    "pages/myself/userInfo/userInfo",
+    "pages/myself/vocation/vocation",
+    "pages/myself/clockInRecord/clockInRecord",
+    "pages/myself/add_goal/add_goal",
+    "pages/myself/write_bug/write_bug",
+    "pages/rankingList/write/write"
+  ],
+  "window": {
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#FFFFFF",
+    "selectedColor": "#FFE135",
+    "backgroundColor": "#0E55B1",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "img/tabBar_icon/首页.png",
+        "selectedIconPath": "img/tabBar_icon/首页_selected.png"
+      },
+      {
+        "pagePath": "pages/star/star",
+        "text": "星空",
+        "iconPath": "img/tabBar_icon/星空.png",
+        "selectedIconPath": "img/tabBar_icon/星空_selected.png"
+      },
+      {
+        "pagePath": "pages/rankingList/rankingList",
+        "text": "排行榜",
+        "iconPath": "img/tabBar_icon/排行榜.png",
+        "selectedIconPath": "img/tabBar_icon/排行榜_selected.png"
+      },
+      {
+        "pagePath": "pages/myself/myself",
+        "text": "我的",
+        "iconPath": "img/tabBar_icon/我的.png",
+        "selectedIconPath": "img/tabBar_icon/我的_selected.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

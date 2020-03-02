@@ -1,0 +1,25 @@
+<!--pages/star/styleStar/stylestar.wxml-->
+<view class='background_img_star'>
+  <view class='navigation_arrow_left' bindtap='backToOnePage'></view>
+  
+  <view class='constellation-name'>{{constellation}}</view>
+  <view class='userinfo-box'>
+    <view class='avatar'>{{avatar}}</view>
+    <view class='nick-name'>{{nick_name}}</view>
+  </view>
+  <view class='sidebar'>
+    <view class='sidebar_icon' bindtap='changeConstellation'><view class='change-constellation-icon'></view></view>
+  </view>
+
+
+  <movable-area class='movable_area'>
+    <movable-view class='star_movable_container' 
+                  wx:for='{{star_list}}' wx:key="{{item.order}}" 
+                  data-order='{{item.order}}' bindtap='showStarInfo'
+                  x='{{item.x}}' y='{{item.y}}' direction='none' scale='false'>
+      <!--movable-view 原理是将x，y转换为translateX/Y/Z 需要使用view嵌套使用rotate 同时用scale避免放缩问题-->
+      <view class='star' style='transform:rotate({{item.rotation_angle}}deg) scale({{item.size}});'></view>
+    </movable-view>
+  </movable-area>
+
+</view>

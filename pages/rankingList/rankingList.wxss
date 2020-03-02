@@ -1,0 +1,628 @@
+/* pages/analyze/analyze.wxss */
+
+page {
+  height: 100%;
+  font-size: 30rpx;
+  font-family: -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
+}
+
+.background_img_1 {
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  font-size: large;
+  font-weight: 500;
+  text-align: center;
+  color: white;
+  position: absolute;
+  top: 60rpx;
+  left: 325rpx;
+}
+
+.early_rising_time {
+  font-size: 27rpx;
+  line-height: 60rpx;
+  text-align: center;
+  position: absolute;
+  top: 12%;
+  left: 73rpx;
+  height: 60rpx;
+  width: 170rpx;
+  border-radius: 100rpx;
+  color: white;
+  font-weight: 500;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.early_rising_time_2 {
+  font-size: 27rpx;
+  line-height: 60rpx;
+  text-align: center;
+  position: absolute;
+  top: 12%;
+  left: 73rpx;
+  height: 60rpx;
+  width: 170rpx;
+  border-radius: 100rpx;
+  color: #ffd700;
+  font-weight: 600;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.consecutive_days {
+  font-size: 27rpx;
+  line-height: 60rpx;
+  text-align: center;
+  position: absolute;
+  top: 12%;
+  left: 293rpx;
+  height: 60rpx;
+  width: 170rpx;
+  border-radius: 100rpx;
+  color: white;
+  font-weight: 500;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.consecutive_days_2 {
+  font-size: 27rpx;
+  line-height: 60rpx;
+  text-align: center;
+  position: absolute;
+  top: 12%;
+  left: 293rpx;
+  height: 60rpx;
+  width: 170rpx;
+  border-radius: 100rpx;
+  color: #ffd700;
+  font-weight: 600;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.early_days {
+  font-size: 27rpx;
+  line-height: 60rpx;
+  text-align: center;
+  position: absolute;
+  top: 12%;
+  left: 513rpx;
+  height: 60rpx;
+  width: 170rpx;
+  border-radius: 100rpx;
+  color: white;
+  font-weight: 500;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.early_days_2 {
+  font-size: 27rpx;
+  line-height: 60rpx;
+  text-align: center;
+  position: absolute;
+  top: 12%;
+  left: 513rpx;
+  height: 60rpx;
+  width: 170rpx;
+  border-radius: 100rpx;
+  color: #ffd700;
+  font-weight: 600;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+@keyframes rankList_open {
+  from {
+    height: 18%;
+  }
+
+  to {
+    height: 44%;
+  }
+}
+
+@keyframes rankList_close {
+  from {
+    height: 44%;
+  }
+
+  to {
+    height: 18%;
+  }
+}
+
+.rankList_open {
+  animation: rankList_open 0.5s forwards;
+}
+
+.rankList_close {
+  animation: rankList_close 0.5s forwards;
+}
+
+.rank_list {
+  background-color: white;
+  border-radius: 40rpx;
+  border: 2rpx solid #5cacee;
+  position: absolute;
+  top: 19%;
+  left: 25rpx;
+  height: 44%;
+  width: 700rpx;
+}
+
+.rankList_scroll_frame {
+  height: 100%;
+}
+
+.ranklist_tips {
+  position: relative;
+  top: 30rpx;
+  left: 120rpx;
+  font-size: 30rpx;
+  color:#0a0a0a;
+}
+
+.rankList_line {
+  padding: 25rpx 15rpx;  
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.rankList_line:before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  height: 1px;
+  border-top: 1rpx solid #d9d9d9;
+  color: #d9d9d9;
+  left: 30rpx;
+  right: 30rpx;
+}
+
+.rankList_line:first-child:before {
+  display: none;
+}
+
+.user_rank_list_1_text {
+  position: relative;
+  font-size: 30rpx;
+  font-weight: 600;
+  left: 52rpx;
+  margin-top: 13rpx;
+  margin-bottom: 13rpx;
+}
+
+.rank_img {
+  width: 48rpx;
+  height: 56rpx;
+  position: relative;
+  top: 8rpx;
+  left: 34rpx;
+}
+
+.user_avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  position: absolute;
+  left: 180rpx;
+  background-size: cover;
+}
+
+.user_rank_list_2 {
+  position: absolute;
+  left: 300rpx;
+  font-weight: 600;
+  width: 180rpx;
+  height: 50rpx;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  white-space: nowrap;
+}
+
+.user_rank_list_3 {
+  position: absolute;
+  left: 510rpx;
+  font-weight: 600;
+}
+
+.user_rank_list_3_2 {
+  position: absolute;
+  left: 530rpx;
+  font-weight: 600;
+}
+@keyframes forum_open {
+  from {
+    top: 66%;
+    height: 25%;
+  }
+
+  to {
+    top: 40%;
+    height: 51%;
+  }
+}
+
+@keyframes forum_close {
+  from {
+    top: 40%;
+    height: 51%;
+  }
+
+  to {
+    top: 66%;
+    height: 25%;
+  }
+}
+
+.forum_open {
+  animation: forum_open 0.5s forwards;
+}
+
+.forum_close {
+  animation: forum_close 0.5s forwards;
+}
+
+.forum {
+  background-color: white;
+  border-radius: 40rpx;
+  border: 2rpx solid #5cacee;
+  position: absolute;
+  top: 66%;
+  left: 25rpx;
+  height: 25%;
+  width: 700rpx;
+}
+
+.forum_scroll_frame {
+  height: 100%;
+}
+
+.forum_tips{
+  position: relative;
+  top: 30rpx;
+  left: 190rpx;
+  font-size: 30rpx;
+  color:#0a0a0a;
+}
+
+.forum_line {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.forum_line:before {
+  content: " ";
+  position: absolute;
+  top: 0rpx;
+  height: 1px;
+  border-top: 1rpx solid #d9d9d9;
+  color: #d9d9d9;
+  left: 40rpx;
+  right: 40rpx;
+}
+
+.forum_line:first-child:before {
+  display: none;
+}
+
+.forum_content {
+  position: relative;
+  top: 50rpx;
+  left: 140rpx;
+}
+
+.forum_content_1 {
+  position: relative;
+  top: -20rpx;
+}
+
+.forum_user_avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  position: relative;
+  left: -110rpx;
+  background-size: cover;
+}
+
+.forum_user_nickName {
+  position: relative;
+  top: -90rpx;
+  font-size: 25rpx;
+  font-weight: 700;
+}
+
+.forum_user_messageText {
+  position: relative;
+  top: -105rpx;
+  font-size: 25rpx;
+  font-weight: 700;
+  width: 500rpx;
+  white-space: pre-line;  /* 解决换行*/
+  word-break: break-all;  /* 解决换行*/
+}
+
+.view_hover {
+  background-color: #bebec2;
+}
+
+.forum_content_2 {
+  position: relative;
+  top: -90rpx;
+  overflow: hidden; /*解决float: left破坏性问题*/
+}
+
+.forum_imgfile {
+  float: left;
+  margin-right: 9px;
+  margin-bottom: 9px;
+}
+
+.forum_img {
+  display: block;
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.forum_content_3 {
+  display: -webkit-box;
+  position: relative;
+  top: -70rpx;
+  line-height: 25rpx;
+}
+
+.forum_user_sendTime {
+  position: relative;
+  font-size: 25rpx;
+  font-weight: 700;
+  margin-right: 35rpx;
+  height: 25rpx;
+}
+
+.forum_user_sendTime_2{
+  position: relative;
+  font-size: 25rpx;
+  font-weight: 700;
+  margin-right: 200rpx;
+  height: 25rpx;
+}
+
+.deleteMessage{
+  color: #586b95;
+  font-size: 25rpx;
+  font-weight: 700;
+  margin-right: 135rpx;
+  height: 25rpx;
+}
+
+.forum_comment_icon {
+  width: 40rpx;
+  height: 40rpx;
+  position: relative;
+  top: -8rpx;
+  background-size: cover;
+  margin-right: 10rpx;
+}
+
+.forum_comment_word {
+  position: relative;
+  font-size: 25rpx;
+  font-weight: 600;
+  margin-right: 30rpx;
+  height: 25rpx;
+}
+
+.forum_praise_icon {
+  width: 50rpx;
+  height: 50rpx;
+  position: relative;
+  top: -20rpx;
+  background-size: cover;
+  margin-right: 5rpx;
+}
+
+.forum_praise_word {
+  position: relative;
+  font-size: 25rpx;
+  font-weight: 600;
+  height: 25rpx;
+}
+
+.forum_content_4 {
+  position: relative;
+  top: -70rpx;
+  background-color: #f3f3f5;
+  display: flex;
+  width: 510rpx;
+  flex-flow: row wrap;
+  line-height: 25rpx;
+}
+
+.praise_img {
+  width: 40rpx;
+  height: 40rpx;
+  position: relative;
+  /*top: 3rpx;*/
+  line-height: 40rpx;
+  margin-left: 5rpx;
+  margin-right: 3rpx;
+}
+
+.forum_praise_user {
+  padding: 6rpx 0rpx;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  top: 6rpx;
+  line-height: 25rpx;
+}
+
+.pariser {
+  font-size: 25rpx;
+  font-weight: 500;
+  color: #586b95;
+}
+
+.pariser_2 {
+  position: relative;
+  left: 5rpx;
+  font-size: 25rpx;
+  font-weight: 500;
+  color: black;
+}
+
+.forum_blank{
+  border: 10rpx solid #f3f3f5;
+  position: relative;
+  top: -70rpx;
+}
+
+.forum_content_5 {
+  position: relative;
+  top: -70rpx;
+  width: 510rpx;
+}
+
+.forum_comment_user_word {
+  display: flex;
+  flex-direction: row;
+  padding: 6rpx 6rpx;
+  background-color: #f3f3f5;
+  line-height: 30rpx;
+}
+
+.button_hover{
+  background-color: #bebec2;
+}
+
+.comment_user {
+  display: flex;
+  flex-direction: row;
+  font-size: 25rpx;
+  font-weight: 500;
+  color: #586b95;
+}
+
+.comment_word {
+  font-size: 25rpx;
+  font-weight: 500;
+  color: black;
+  margin-left: 4rpx;
+  white-space: pre-line;  /* 解决换行*/
+  word-break: break-all;  /* 解决换行*/
+}
+
+.write_entrance {
+  width: 100rpx;
+  height: 100rpx;
+  position: absolute;
+  top: 80%;
+  left: 600rpx;
+}
+
+.input_null {
+  color: #c9c9c9;
+}
+
+/*.comment_input{
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 90rpx;
+}
+
+.comment_input input {
+  background: #f1f1f1;
+  height: 80rpx;
+  padding: 10rpx 20rpx;
+  font-size: 34rpx;
+  width: 77%;
+}
+
+.comment_input_area {
+  width: 100%;
+  height: 90rpx;
+  position: relative;
+  overflow: hidden;
+}
+
+.comment_input{
+  width: 20%;
+  position: absolute;
+  background: #42c97f;
+  height: 90rpx;
+  line-height: 87rpx;
+  text-align: center;
+  font-size: 34rpx;
+  color: #fff;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}*/
+
+
+
+
+
+
+.comment_input {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end; 
+  justify-content: space-between;
+  box-sizing: border-box;
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 90rpx;
+  width: 100%;
+  padding: 18rpx 0 18rpx 30rpx;
+  background-color: #f7f8f7;
+  font-size: 28rpx;
+  z-index: 999;
+}
+
+.comment_input_area{
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  height: 90rpx;
+  position: relative;
+  top: 33rpx;
+  line-height: 70rpx;
+  /*overflow: hidden;*/
+}
+
+.comment_input_text {
+  width: 75%;
+  height: 70rpx;
+  line-height: 34rpx;
+  font-size: 28rpx;
+  background-color: rgb(255, 255, 255);
+  position: relative;
+  top: -4rpx;
+  padding: 0rpx 20rpx;
+}
+
+.comment_send_btn{
+  position: relative;
+  top: -4rpx;
+  color: white;
+  background-color: rgb(16, 197, 31);
+  height: 70rpx;
+  width: 120rpx;
+  font-size: 30rpx;
+  font-weight: 400;
+  border-radius: 4px;
+}

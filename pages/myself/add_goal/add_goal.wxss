@@ -1,0 +1,66 @@
+/* pages/add_goal/add_goal.wxss */
+.DIY_goal {
+  position: absolute;
+  top: 0rpx;
+  left: 180rpx;
+  height: 100rpx;
+  width: 400rpx;
+  background-color: white;
+  color: #5CACEE;
+  border-radius: 98rpx; 
+  border: 2rpx solid #5CACEE;
+}
+
+.optional_goal{
+  position: absolute;
+  top: 140rpx;
+  left: 30rpx;
+  color: black;
+  font-size: large;
+  font-weight: 800;
+}
+
+.manage_goal{
+  position: absolute;
+  top: 150rpx;
+  left: 620rpx;
+  color: #1874CD;
+  font-size: small;
+  font-weight: 800;
+}
+
+.frame1{
+  border: 2rpx solid #5CACEE;
+  position: absolute;
+  top: 220rpx;
+  left: 30rpx;
+  height: 320rpx;
+  width: 320rpx;
+}
+
+.frame2{
+  border: 2rpx solid #5CACEE;
+  position: absolute;
+  top: 220rpx;
+  left: 390rpx;
+  height: 320rpx;
+  width: 320rpx;
+}
+
+.frame3{
+  border: 2rpx solid #5CACEE;
+  position: absolute;
+  top: 580rpx;
+  left: 30rpx;
+  height: 320rpx;
+  width: 320rpx;
+}
+
+.frame4{
+  border: 2rpx solid #5CACEE;
+  position: absolute;
+  top: 580rpx;
+  left: 390rpx;
+  height: 320rpx;
+  width: 320rpx;
+}

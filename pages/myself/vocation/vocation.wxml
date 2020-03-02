@@ -1,0 +1,22 @@
+<!--pages/vocation/vocation.wxml-->
+<!--pages/userInfo/userInfo.wxml-->
+<view class='background_img_1'>
+  <navigator url="../../myself/myself" class="nav_to_user" open-type='switchTab' hover-class="none" style="top:{{statusBarHeight+19}}px">
+    <view class='blank_text'></view>
+  </navigator>
+  <view class='text_word'>假期选择:</view>
+  <image class='help' src='/img/myself_icon/vocation_help.png' bindtap='click_help'></image>
+  <view class='select_days'>
+    <checkbox-group class='vocation_pageframe_container' bindchange="checkboxChange">
+      <label class="vocation_pageframe" wx:for="{{checkboxItems}}" wx:key="value">
+        <checkbox class="vocation-check" value="{{item.value}}" checked="{{item.checked}}" />
+        <view class="icon-check">
+          <icon class="icon-check_circle" type="circle" size="23" wx:if="{{!item.checked}}"></icon>
+          <icon class="icon-check_success" type="success" size="23" wx:if="{{item.checked}}"></icon>
+        </view>
+        <view class="vocation_page_text">{{item.name}}</view>
+      </label>
+    </checkbox-group>
+  </view>
+  <button class='save_vocation' bindtap='save_vocation_setting'>保存设置</button>
+</view>

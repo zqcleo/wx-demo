@@ -1,0 +1,62 @@
+<!--pages/star/star.wxml-->
+<view class='container background_img_star'>
+  <view wx:if="{{constellation_mode}}" class='constellation-container'>
+    <view class='sidebar'>
+      <view class='sidebar_icon' bindtap='showPlayGuide'><view class='questionmark_icon'></view></view>
+      <view class='sidebar_icon' bindtap='enterGalaxy'><view class='galaxy_icon'></view></view>
+
+      <view class='sidebar_icon {{explore_sidebar_on ? "sidebar-transparent":""}}' 
+            bindtap='showExploreChoiceBars'><view class='explore_icon'></view></view>
+        <view class='sidebar_icon random-explore-sidebar {{explore_sidebar_on ? "random-explore-sidebar-show":"sidebar-hide"}}' 
+              bindtap='randomExploreOthers'><view class='random-explore-icon'></view></view>
+        <view class='sidebar_icon specified-explore-sidebar {{explore_sidebar_on? "specified-explore-sidebar-show":"sidebar-hide"}}'
+              bindtap='specifiedExploreOthers'><view class='specified-explore-icon'></view></view>
+      
+      <view wx:if="{{on_newest_constellation}}" class='sidebar_icon' bindtap='saveConstellation'><view class='save-constellation-icon'></view></view>
+      <!--><view class='sidebar_icon' bindtap='openStarMenu'><view class='menu_icon'></view></view><-->
+    </view>
+
+    <movable-area wx:if="{{on_newest_constellation}}" class='movable_area'>                   <!--animation="{{false}}" 导致y坐标陷入死循环-->
+      <movable-view class='star_movable_container' 
+                    wx:for='{{star_list}}' wx:key="{{item.order}}" 
+                    bindtap='styleStar' bindchange='changeStarPosition' data-order='{{item.order}}' 
+      x='{{item.x}}' y='{{item.y}}' direction='all' scale='true' scale-min='0.1' scale-max='2'>
+        <!--movable-view 原理是将x，y转换为translateX/Y/Z 需要使用view嵌套使用rotate 同时用scale避免放缩问题-->
+        <view class='star' style='transform:rotate({{item.rotation_angle}}deg) scale({{item.size}});'>
+        </view>
+      </movable-view>
+    </movable-area>
+
+    <movable-area wx:if="{{!on_newest_constellation}}" class='movable_area'>
+      <movable-view class='star_movable_container' 
+                    wx:for='{{selected_star_list}}' wx:key="{{item.order}}" 
+                    data-order='{{item.order}}' bindtap='showStarInfo'
+                    x='{{item.x}}' y='{{item.y}}' direction='none' scale='false'>
+        <view class='star' style='transform:rotate({{item.rotation_angle}}deg) scale({{item.size}});'></view>
+      </movable-view>
+    </movable-area>
+  </view>
+
+  <view wx:else class='galaxy-container' style='height: 100%;'>
+    <view class='sidebar'>
+      <view class='sidebar_icon' bindtap='showPlayGuide'><view class='questionmark_icon'></view></view>
+      <view class='sidebar_icon' bindtap='enterGalaxy'><view class='galaxy_icon'></view></view>
+
+      <view class='sidebar_icon {{explore_sidebar_on ? "sidebar-transparent":""}}' 
+            bindtap='showExploreChoiceBars'><view class='explore_icon'></view></view>
+        <view class='sidebar_icon random-explore-sidebar {{explore_sidebar_on ? "random-explore-sidebar-show":"sidebar-hide"}}' 
+              bindtap='randomExploreOthers'><view class='random-explore-icon'></view></view>
+        <view class='sidebar_icon specified-explore-sidebar {{explore_sidebar_on? "specified-explore-sidebar-show":"sidebar-hide"}}'
+              bindtap='specifiedExploreOthers'><view class='specified-explore-icon'></view></view>
+    </view>
+
+    <view class='galaxy'>
+      <view wx:for='{{star_list_arr.length}}' wx:key="{{index}}"
+                  data-order='{{index}}' bindtap='enterConstellation'>
+        <view class='constellation-preview constellation-icon'></view>
+        <view class='constellation-name'>{{index}}</view>
+      </view>
+    </view>
+  </view>
+  
+</view>

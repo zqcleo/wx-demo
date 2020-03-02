@@ -1,0 +1,21 @@
+<!--pages/user/write_bug/write_bug.wxml-->
+<view class='background_img_1'>
+  <view class='cancel' bindtap='clickToBack' style="top:{{statusBarHeight+12}}px">取消</view>
+
+  <view class='write_bug_content'>
+    <textarea class='write_bug' bindinput='getTextValue' value='{{bug_text}}' placeholder='感谢您提交的bug反馈，我们会尽快修复' maxlength='-1' />
+  </view>
+
+  <view class="modal-mask" bindtap="hideModal" wx:if="{{showModal_state}}"></view>
+  <view class="modal-dialog" wx:if="{{showModal_state}}">
+    <view class="modal-title">将此次编辑保留？</view>
+    <view class="modal-footer">
+      <view class="btn-cancel" bindtap="showModal_cancel" data-status="cancel">不保留
+      </view>
+      <view class="btn-confirm" bindtap="showModal_confirm" data-status="confirm">保留
+      </view>
+    </view>
+  </view>
+
+  <button class='submit' bindtap='clickToSubmit'>提交</button>
+</view>

@@ -1,0 +1,79 @@
+/* pages/clockInRecord/clockInRecord.wxss */
+page {
+  height: 100%;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  font-family: -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
+}
+
+.background_img_1{
+  height: 100%;
+  width: 100%;
+}
+
+.clockIn_record{
+  background-color: white;
+  border-radius: 40rpx; 
+  border: 2rpx solid #5CACEE;
+  position: absolute;
+  top: 13%;
+  left: 25rpx;
+  height: 28%;
+  width: 700rpx;
+}
+
+.clockIn_record_pageframe {
+  padding: 3% 3%;
+  position: relative;
+  top: 5%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  line-height: 40rpx;
+}
+
+.clockIn_record_page_list {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+}
+
+.clockIn_record_page_text {
+  text-align: right;
+  color: #999;
+}
+
+.arrow {
+  padding-right: 13px;
+  position: relative;
+}
+
+.arrow:after {
+  content: " ";
+  display: inline-block;
+  height: 6px;
+  width: 6px;
+  border-width: 2px 2px 0 0;
+  border-color: #c8c8cd;
+  border-style: solid;
+  -webkit-transform: matrix(0.71, 0.71, -.71, 0.71, 0, 0);
+  transform: matrix(0.71, 0.71, -.71, 0.71, 0, 0);
+  top: -2px;
+  position: absolute;
+  top: 50%;
+  margin-top: -4px;
+  right: 2px;
+}
+
+.clockIn_record_line{
+  content: " ";
+  position: relative;
+  top: 20rpx;
+  height: 1px;
+  border-top: 1rpx solid #d9d9d9;
+  left: 24rpx;
+  width: 655rpx;
+}

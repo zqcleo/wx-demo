@@ -1,0 +1,72 @@
+<!--index.wxml-->
+<view class='background_img_1'>
+  <view class="userInfo_container">
+    <image class="userinfo-avatar" bindtap='previewImage' src="{{avatar}}" background-size="cover"></image>
+    <navigator url="../myself/userInfo/userInfo" class="userinfo" hover-class="none">
+      <view class="userinfo-nickname">{{nick_name}}</view>
+      <view class="moreUserinfo">查看更多资料</view>
+      <view class="avatar-navi"></view>
+      <view class='blank_text_user'></view>
+    </navigator>
+  </view>
+
+  <view class='setting'>
+    <navigator url="../myself/clockInRecord/clockInRecord" class="user_page_frame">
+      <image class='record' src="/img/myself_icon/record.png"></image>
+      <view class="user_page_list">打卡详情</view>
+      <view class="arrow"></view>
+    </navigator>
+
+    <view class='user_blank'></view>
+
+    <navigator url="../myself/vocation/vocation" class="user_page_frame">
+      <image class='vocation' src="/img/myself_icon/vocation.png"></image>
+      <view class="user_page_list">假期时间</view>
+      <view class="select_day_text">{{custom_vacation}}</view>
+      <view class="arrow"></view>
+    </navigator>
+    
+    <view class='user_line'></view>
+
+    <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+      <view class="user_page_frame">
+        <image class='card' src="/img/myself_icon/card.png"></image>
+        <view class="user_page_list">打卡时间</view>
+        <view class="select_time_text">{{custom_clockin_time}}</view>
+        <view class="arrow"></view>
+      </view>
+    </picker>
+
+    <view class='user_line'></view>
+
+    <view bindtap='addGoal' class="user_page_frame">
+      <image class='goal' src="/img/myself_icon/add_goal.png"></image>
+      <view class="user_page_list">添加目标</view>
+      <view class="arrow"></view>
+    </view>
+
+    <view class='user_blank'></view>
+
+    <navigator url="../myself/write_bug/write_bug" class="user_page_frame">
+      <image class='bug' src="/img/myself_icon/bug.png"></image>
+      <view class="user_page_list">Bug反馈</view>
+      <view class="arrow"></view>
+    </navigator>
+    
+    <view class='user_line'></view>
+
+    <view class="user_page_frame">
+      <image class='rm_storage' src="/img/myself_icon/rm_storage.png"></image>
+      <view class="user_page_list" bindtap='clearAllStorage'>清除缓存</view>
+      <view class="storage_size">{{storage_size}}</view>
+    </view>
+ 
+    <view class='user_line'></view>
+
+    <navigator url="" class="user_page_frame">
+      <image class='about' src="/img/myself_icon/about.png"></image>
+      <view class="user_page_list">关于我们</view>
+      <view class="arrow"></view>
+    </navigator>
+  </view>
+</view>

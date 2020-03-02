@@ -1,0 +1,149 @@
+<!--pages/analyze/analyze.wxml-->
+<view class='background_img_1'>
+  <view class='title'></view>
+  <button class="{{check_btn1 == false ? 'early_rising_time' : 'early_rising_time_2'}}" bindtap='click_early_time'>早起时间</button>
+
+  <button class="{{check_btn2 == false ? ' consecutive_days ' : 'consecutive_days_2 '}}" bindtap='click_consecutive_days'>连续天数</button>
+
+  <button class="{{check_btn3 == false ? ' early_days ' : 'early_days_2 '}}" bindtap='click_early_days'>早起天数</button>
+
+  <view class="rank_list {{rankList_state}}" bindtouchstart='rankList_startMove' bindtouchend='rankList_endMove'>
+    <scroll-view class="rankList_scroll_frame" scroll-y scroll-top="{{rankList_scrollTop}}">
+      <view wx:if='{{check_btn1 == true}}'>
+        <view class='ranklist_tips' wx:if="{{early_time_list.length == 0}}">今天暂时无人打卡哦，快来打卡吧！</view>
+        <view class='rankList_line' wx:for="{{early_time_list}}" wx:key="session_id" wx:for-index="index" wx:for-item="user">
+          <view class='user_rank_list_1'>
+            <view wx:if='{{index == 0}}'>
+              <image class="rank_img" src='/img/ranklist_icon/rank_1.png' background-size="cover"></image>
+            </view>
+            <view wx:elif='{{index == 1}}'>
+              <image class="rank_img" src='/img/ranklist_icon/rank_2.png' background-size="cover"></image>
+            </view>
+            <view wx:elif='{{index == 2}}'>
+              <image class="rank_img" src='/img/ranklist_icon/rank_3.png' background-size="cover"></image>
+            </view>
+            <view class='user_rank_list_1_text' wx:else>{{user.ranking}}</view>
+          </view>
+          <image class="user_avatar" src='{{user.avatar}}' background-size="cover"></image>
+          <view class='user_rank_list_2'>{{user.nick_name}}</view>
+          <view class='user_rank_list_3'>{{user.time}}</view>
+        </view>
+      </view>
+
+      <view wx:if='{{check_btn2 == true}}'>
+        <view class='ranklist_tips' wx:if="{{consecutive_days_list.length == 0}}">目前暂时无人打卡哦，快来打卡吧！</view>
+        <view class='rankList_line' wx:for="{{consecutive_days_list}}" wx:key="session_id" wx:for-index="index" wx:for-item="user">
+          <view class='user_rank_list_1'>
+            <view wx:if='{{index == 0}}'>
+              <image class="rank_img" src='/image/rank_1.png' background-size="cover"></image>
+            </view>
+            <view wx:elif='{{index == 1}}'>
+              <image class="rank_img" src='/image/rank_2.png' background-size="cover"></image>
+            </view>
+            <view wx:elif='{{index == 2}}'>
+              <image class="rank_img" src='/image/rank_3.png' background-size="cover"></image>
+            </view>
+            <view class='user_rank_list_1_text' wx:else>{{user.ranking}}</view>
+          </view>
+          <image class="user_avatar" src='{{user.avatar}}' background-size="cover"></image>
+          <view class='user_rank_list_2'>{{user.nick_name}}</view>
+          <view class='user_rank_list_3_2'>{{user.days}}天</view>
+        </view>
+      </view>
+
+      <view wx:if='{{check_btn3 == true}}'>
+        <view class='ranklist_tips' wx:if="{{early_days_list.length == 0}}">目前暂时无人打卡哦，快来打卡吧！</view>
+        <view class='rankList_line' wx:for="{{early_days_list}}" wx:key="session_id" wx:for-index="index" wx:for-item="user">
+          <view class='user_rank_list_1'>
+            <view wx:if='{{index == 0}}'>
+              <image class="rank_img" src='/image/rank_1.png' background-size="cover"></image>
+            </view>
+            <view wx:elif='{{index == 1}}'>
+              <image class="rank_img" src='/image/rank_2.png' background-size="cover"></image>
+            </view>
+            <view wx:elif='{{index == 2}}'>
+              <image class="rank_img" src='/image/rank_3.png' background-size="cover"></image>
+            </view>
+            <view class='user_rank_list_1_text' wx:else>{{user.ranking}}</view>
+          </view>
+          <image class="user_avatar" src='{{user.avatar}}'></image>
+          <view class='user_rank_list_2'>{{user.nick_name}}</view>
+          <view class='user_rank_list_3_2'>{{user.days}}天</view>
+        </view>
+      </view>
+
+    </scroll-view>
+  </view>
+
+  <view class="forum {{forum_state}}" bindtouchstart='forum_startMove' bindtouchend='forum_endMove'>
+    <scroll-view class="forum_scroll_frame" scroll-y scroll-top="{{forum_scrollTop}}">
+      <view class='forum_tips' wx:if="{{user_message.length == 0}}">快来分享你的新鲜事吧！</view>
+
+      <view class='forum_line' wx:for="{{user_message}}" wx:key="time_stamp" wx:for-index="user_index" wx:for-item="user">
+
+        <view class='forum_content'>
+          <view class='forum_content_1'>
+            <image class='forum_user_avatar' src='{{user.avatar}}'></image>
+            <view class='forum_user_nickName'>{{user.nick_name}}</view>
+          </view>
+
+          <view class='forum_user_messageText'>{{user.content}}</view>
+
+          <view class='forum_content_2'>
+            <view wx:for="{{user.picture_path}}" wx:key="session_id">
+              <view class="forum_imgfile" bindtap="previewImage" id="{{item}}" data-user_index="{{user_index}}">
+                <image class="forum_img" src="{{item}}" mode='aspectFill'></image>
+              </view>
+            </view>
+          </view>
+
+          <view class='forum_content_3'>
+            <view class="{{user.session_id == app_session_id ? 'forum_user_sendTime' : 'forum_user_sendTime_2'}}">{{user.send_time}}</view>
+            <view wx:if="{{user.session_id == app_session_id}}" class='deleteMessage' bindtap='deleteMsg' data-user_index="{{user_index}}" hover-class='view_hover' hover-stay-time='40'>删除</view>
+            <image class='forum_comment_icon' src="/image/comment.png" bindtap='clickToComment' data-user_index='{{user_index}}'></image>
+            <view class='forum_comment_word' bindtap='clickToComment' data-user_index='{{user_index}}' hover-class='view_hover' hover-stay-time='40'>评论</view>
+
+            <image class='forum_praise_icon' src='/image/praise.png' bindtap='clickToPraise' data-user_index='{{user_index}}'></image>
+            <view class='forum_praise_word' bindtap='clickToPraise' data-user_index='{{user_index}}' wx:if="{{!user.praise_state}}" hover-class='view_hover' hover-stay-time='40'>点赞</view>
+            <view class='forum_praise_word' bindtap='clickToPraise' data-user_index='{{user_index}}' wx:elif="{{user.praise_state}}" hover-class='view_hover' hover-stay-time='40'>取消</view>
+          </view>
+
+          <view class='forum_content_4'>
+            <image class='praise_img' wx:if="{{user.thumb_up.length > 0}}" src='/image/praise.png'></image>
+            <view class="forum_praise_user" wx:for="{{user.thumb_up}}" wx:key="session_id">
+              <view class='pariser' wx:if="{{(user.thumb_up.length>=10 && index<=8) || (user.thumb_up.length<10 && index <= user.thumb_up.length-2)}}">{{item.nick_name}}、</view>
+              <view class='pariser' wx:elif="{{(user.thumb_up.length>=10 && index == 9) || (user.thumb_up.length<10 && index==user.thumb_up.length-1)}}">{{item.nick_name}}</view>
+              <view class='pariser_2' wx:if="{{index == user.thumb_up.length-1 && user.thumb_up.length <= 10}}">觉得很赞</view>
+              <view class='pariser_2' wx:elif="{{index == 9 && user.thumb_up.length > 10}}">等{{user.thumb_up.length}}人觉得很赞</view>
+            </view>
+          </view>
+
+          <view wx:if="{{user.thumb_up.length > 0 && user.remark.length > 0}}" class='forum_blank'></view>
+
+          <view class='forum_content_5'>
+            <view class="forum_comment_user_word" bindtap='clickToReply' wx:for="{{user.remark}}" wx:key="time_stamp" wx:for-index="comment_index" data-user_index='{{user_index}}' data-comment_index='{{comment_index}}' hover-class="button_hover" hover-stay-time='40'>
+              <view class='comment_user'>{{item.nick_name}}:</view>
+              <view class='comment_word'>{{item.word}}</view>
+            </view>
+          </view>
+
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <navigator url="../rankingList/write/write" class="write">
+    <image wx:if="{{hasUserInfo}}" class='write_entrance' src='/img/ranklist_icon/write_icon.png'></image>
+  </navigator>
+
+  <view class='comment_input' wx:if="{{show_focus}}" style="bottom: {{bottom}}px">
+    <view class='comment_input_area'>
+      <textarea class='comment_input_text' placeholder='{{comment_placeholder}}' placeholder-class="input_null" maxlength='-1' focus="{{show_focus}}" adjust-position="{{false}}" fixed="{{true}}" show-confirm-bar="{{false}}" confirm-type="send" bindfocus='bindfocus'
+        bindblur='bindblur' bindinput='getInputValue' bindconfirm='sendComment'>
+      </textarea>
+
+      <button class='comment_send_btn' bindtap='sendComment'>发送</button>
+    </view>
+  </view>
+
+</view>

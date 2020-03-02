@@ -1,0 +1,48 @@
+<!--pages/rankingList/write/write.wxml-->
+<view class='background_img_1'>
+
+  <view class='title' style="top: {{statusBarHeight+10}}px">发表动态</view>
+
+  <view class='cancel' bindtap='click_to_cancel' style="top: {{statusBarHeight+12}}px">取消</view>
+
+  <view class="write_weui-cells add_Files">
+    <scroll-view class="write_scroll" scroll-y>
+      <view class="weui-cell write_weui-cell">
+        <view class="weui-cell__bd">
+          <view class="weui-uploader__bd">
+            <view class="weui-uploader__files" id="uploaderFiles">
+
+              <textarea class='write_content' bindinput='getTextValue' value='{{text_value}}' placeholder='分享你的新鲜事...' maxlength='-1' />
+
+              <view class='blank'></view>
+
+              <block wx:for="{{image_files}}" wx:key="*this">
+                <view class="weui-uploader__file" bindtap="previewImage" bindlongpress="deleteImage" id="{{item}}" data-index="{{index}}">
+                  <image class="weui-uploader__img write_image_size" src="{{item}}" mode="aspectFill" />
+                </view>
+              </block>
+
+              <view class="weui-uploader__input-box write_box">
+                <view class="weui-uploader__input" bindtap="chooseImage"></view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <button class='submit' bindtap='click_to_submit'>发表</button>
+
+  <view class="modal-mask" bindtap="hideModal" wx:if="{{showModal_state}}"></view>
+  <view class="modal-dialog" wx:if="{{showModal_state}}">
+    <view class="modal-title">{{modal_title}}</view>
+    <view class="modal-footer">
+      <view class="btn-cancel" bindtap="showModal_cancel" data-status="cancel">{{modal_cancel_text}}
+      </view>
+      <view class="btn-confirm" bindtap="showModal_confirm" data-status="confirm">{{modal_confirm_text}}
+      </view>
+    </view>
+  </view>
+
+</view>

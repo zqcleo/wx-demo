@@ -1,0 +1,30 @@
+<!--pages/userInfo/userInfo.wxml-->
+<view class='background_img_1'>
+  <navigator url="../../myself/myself" class="nav_to_user" open-type='switchTab' hover-class="none" style="top:{{statusBarHeight+19}}px">
+    <view class='blank_text'></view>
+  </navigator>
+
+  <view class='info_list info_list_line'>
+    <view bindtap="chooseImage" class="userInfo_pageframe">
+      <view class="userInfo_page_list">头像</view>
+      <image class="userinfo-avatar" src="{{avatar}}" background-size="cover"></image>
+      <view class="arrow"></view>
+    </view>
+    
+    <view class="userInfo_pageframe">
+      <view class="userInfo_page_list">昵称</view>
+      <input class="userInfo_page_text" maxlength="20" bindconfirm='changeNickname' bindinput='changeNickname' value='{{nick_name}}' />
+      <view class="arrow"></view>
+    </view>
+    
+    <view class="userInfo_pageframe">
+      <view class="userInfo_page_list">性别</view>
+      <view class="userInfo_page_text">{{user_gender}}</view>
+    </view>
+    
+    <view class="userInfo_pageframe">
+      <view class="userInfo_page_list">地区</view>
+      <view class="userInfo_page_text">{{user_region}}</view>
+    </view>
+  </view>
+</view>

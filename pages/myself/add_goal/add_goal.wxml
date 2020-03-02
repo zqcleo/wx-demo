@@ -1,0 +1,18 @@
+<!--pages/add_goal/add_goal.wxml-->
+<button class='DIY_goal'>添加自定义目标</button>
+<view class='offer_goal'>
+  <view class='optional_goal'>可选目标</view>
+  <view class='manage_goal'>目标管理</view>
+  
+  <view class='frame1'>
+  </view>
+
+  <view class='frame2'>
+  </view>
+  
+  <view class='frame3'>
+  </view>
+  
+  <view class='frame4'>
+  </view>
+</view>

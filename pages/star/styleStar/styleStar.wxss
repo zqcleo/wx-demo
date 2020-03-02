@@ -1,0 +1,31 @@
+/* pages/star/styleStar/stylestar.wxss */
+@import "../star.wxss";
+
+.info_box{
+  position: relative;
+  top: 15%;
+  left: 5%;
+  color: white;
+}
+.confirm_stylestar_button{
+  position: fixed;
+  bottom: 200rpx;
+  left: 40%;
+  height: 150rpx;
+  width: 150rpx;
+  border-radius: 100%;
+  background-color: #32325A;
+  color: white;
+}
+.size_slider{
+  position: fixed;
+  bottom: 80rpx;
+  left: 20%;
+  width: 60%;
+}
+.rotation_slider{
+  position: fixed;
+  bottom: 10rpx;
+  left: 20%;
+  width: 60%;
+}

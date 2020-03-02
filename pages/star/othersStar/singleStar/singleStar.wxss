@@ -1,0 +1,13 @@
+/* pages/star/othersStar/singleStar/singleStar.wxss */
+@import "../../star.wxss";
+
+.background_img_star{
+  color: white;
+}
+
+.info_box{
+  position: relative;
+  top: 15%;
+  left: 5%;
+  color: white;
+}

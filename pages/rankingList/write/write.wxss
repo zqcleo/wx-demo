@@ -1,0 +1,206 @@
+/* pages/rankingList/write/write.wxss */
+
+/* pages/rankingList/write/write.wxss */
+
+page {
+  height: 100%;
+  font-size: 30rpx;
+  font-family: -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
+}
+
+.background_img_1 {
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  position: absolute;
+  /*top: 4.2%;*/
+  left: 295rpx;
+  color: white;
+  font-size: 35rpx;
+  font-weight: 400;
+}
+
+.write_area {
+  background-color: white;
+  border-radius: 40rpx;
+  border: 2rpx solid #5cacee;
+  position: absolute;
+  top: 150rpx;
+  left: 25rpx;
+  height: 800rpx;
+  width: 700rpx;
+}
+
+.write_scroll {
+  height: 100%;
+}
+
+.write_content {
+  position: absolute;
+  top: 12rpx;
+  left: 30rpx;
+  width: 644rpx;
+  height: 35%;
+}
+
+.blank{
+  border: 1rpx solid white;
+  height: 40rpx;
+}
+
+.weui-cells {
+  position: relative;
+  margin-top: 1.17647059em;
+  background-color: #fff;
+  line-height: 1.41176471;
+  font-size: 17px;
+}
+
+.add_Files {
+  background-color: white;
+  border-radius: 40rpx;
+  margin-bottom: 0.3em;
+  border: 2rpx solid #5cacee;
+  position: absolute;
+  top: 10%;
+  left: 25rpx;
+  height: 60%;
+  width: 700rpx;
+}
+
+.weui-cell {
+  padding: 0rpx 30rpx;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.write_weui-cell {
+  padding: 330rpx 30rpx;
+}
+
+.weui-cell:before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 1px;
+  border-top: 1rpx solid #d9d9d9;
+  color: #d9d9d9;
+  left: 15px;
+}
+
+.weui-cell:first-child:before {
+  display: none;
+}
+
+.weui-cell__bd {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+}
+
+.weui-uploader__bd {
+  margin-bottom: -4px;
+  margin-right: -9px;
+}
+
+.weui-uploader__file {
+  float: left;
+  margin-right: 9px;
+  margin-bottom: 9px;
+}
+
+.weui-uploader__img {
+  display: block;
+  width: 79px;
+  height: 79px;
+}
+
+.write_image_size {
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.weui-uploader__input-box {
+  float: left;
+  position: relative;
+  margin-right: 9px;
+  margin-bottom: 9px;
+  width: 77px;
+  height: 77px;
+  border: 1px solid #d9d9d9;
+}
+
+.weui-uploader__input-box:after, .weui-uploader__input-box:before {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: #d9d9d9;
+}
+
+.weui-uploader__input-box:before {
+  width: 2px;
+  height: 39.5px;
+}
+
+.weui-uploader__input-box:after {
+  width: 39.5px;
+  height: 2px;
+}
+
+.weui-uploader__input-box:active {
+  border-color: #999;
+}
+
+.weui-uploader__input-box:active:after, .weui-uploader__input-box:active:before {
+  background-color: #999;
+}
+
+.write_box {
+  width: 197rpx;
+  height: 197rpx;
+}
+
+.write_box:before {
+  height: 100rpx;
+}
+
+.write_box:after {
+  width: 100rpx;
+}
+
+.weui-uploader__input {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.submit {
+  position: absolute;
+  top: 75%;
+  left: 278rpx;
+  height: 90rpx;
+  width: 200rpx;
+  background-color: white;
+  color: #5cacee;
+  border-radius: 98rpx;
+  border: 2rpx solid #5cacee;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+  line-height: 90rpx;   /* 和height的值相等，保证文字垂直居中 */
+}
+
+

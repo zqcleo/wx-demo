@@ -1,0 +1,77 @@
+/* pages/userInfo/userInfo.wxss */
+
+page {
+  height: 100%;
+  font-size: 16px;
+  font-family: -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
+}
+
+.background_img_1 {
+  width: 100%;
+  height: 100%;
+}
+
+.info_list{
+  background-color: white;
+  border-radius: 40rpx; 
+  border: 2rpx solid #5CACEE;
+  position: absolute;
+  top: 13%;
+  left: 25rpx;
+  height: 35%;
+  width: 700rpx;
+}
+
+.userinfo-avatar {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  position: relative;
+  left: 0rpx;
+  top: 0rpx;
+}
+
+.userInfo_page_list {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+}
+
+.userInfo_page_text {
+  text-align: right;
+  color: #999;
+}
+
+.arrow {
+  padding-right: 13px;
+  position: relative;
+  left: 10rpx;
+}
+
+.arrow:after {
+  content: " ";
+  display: inline-block;
+  height: 6px;
+  width: 6px;
+  border-width: 2px 2px 0 0;
+  border-color: #c8c8cd;
+  border-style: solid;
+  -webkit-transform: matrix(0.71, 0.71, -.71, 0.71, 0, 0);
+  transform: matrix(0.71, 0.71, -.71, 0.71, 0, 0);
+  top: -2px;
+  position: absolute;
+  top: 50%;
+  margin-top: -4px;
+  right: 2px;
+}
+
+.userInfo_pageframe {
+  padding: 10px 15px;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
